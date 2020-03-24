@@ -1,0 +1,48 @@
+﻿@model AeroLinea_Futuro.Models.Vuelos
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Registrar Vuelo</h2>
+
+<h4>Vuelos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Escala" class="control-label"></label>
+                <input asp-for="Escala" class="form-control" />
+                <span asp-validation-for="Escala" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tanda" class="control-label"></label>
+                <input asp-for="Tanda" class="form-control" />
+                <span asp-validation-for="Tanda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+                <input asp-for="Categoria" class="form-control" />
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-success">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

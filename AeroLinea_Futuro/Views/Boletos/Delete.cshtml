@@ -1,0 +1,44 @@
+﻿@model AeroLinea_Futuro.Models.Boletos
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar Boleto</h2>
+
+<h3>Seguro que quieres eliminar este boleto?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Reserva)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Reserva)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BoletosID" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a class="btn btn-primary" asp-action="Index">Volver a la lista</a>
+    </form>
+</div>
